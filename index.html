@@ -170,15 +170,22 @@
 .pro-nav:hover {
   background: rgba(0,0,0,0.8);
 }
+<style>
+  /* Existing styles ... */
 
+  @media (max-width: 768px) {
+    .pro-slider img {
+      height: 300px;
+    }
+  }
 </style>
 
 <script>
   const galleryImages = [
     "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm1.jpeg",
-    "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm2.jpeg"
-    "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm3.jpeg"
-    "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm4.jpeg"
+    "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm2.jpeg",
+    "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm3.jpeg",
+    "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm4.jpeg",
     "https://raw.githubusercontent.com/PKPSIDD/krishi-kushi-farms/main/images/farm5.jpeg"
   ];
 
@@ -194,6 +201,9 @@
     current = (current - 1 + galleryImages.length) % galleryImages.length;
     proImage.src = galleryImages[current];
   }
+
+  // Auto-slide every 4 seconds
+  setInterval(slideNext, 4000);
 </script>
 
 
