@@ -68,19 +68,20 @@
   </p>
   <p>Surrounded by greenery, calm villages, and nature-rich landscapes.</p>
 </section>
-<section>
+
+
+  <section>
   <h2>Farm Gallery</h2>
-  <p>Explore Krishi Kushi Farmland</p>
+  <p>Authentic views from Krishi Kushi Farmland, Halaguru</p>
 
-  <div class="slider-container">
-    <button class="nav left" onclick="slideLeft()">❮</button>
+  <div class="pro-slider">
+    <button class="pro-nav left" onclick="slidePrev()">❮</button>
 
-    <div class="slider" id="slider">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-      <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314">
-    </div>
+    <img id="proImage"
+      src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+      alt="Krishi Kushi Farmland">
 
-    <button class="nav right" onclick="slideRight()">❯</button>
+    <button class="pro-nav right" onclick="slideNext()">❯</button>
   </div>
 </section>
 
@@ -128,7 +129,71 @@
 .whatsapp-float:hover {
   background-color: #1ebe5d;
 }
+
+  .pro-slider {
+  position: relative;
+  max-width: 1000px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.pro-slider img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  transition: opacity 0.4s ease;
+}
+
+.pro-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  font-size: 36px;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.pro-nav.left {
+  left: 20px;
+}
+
+.pro-nav.right {
+  right: 20px;
+}
+
+.pro-nav:hover {
+  background: rgba(0,0,0,0.8);
+}
+
 </style>
+
+  <script>
+  const galleryImages = [
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "https://images.unsplash.com/photo-1524592094714-0f0654e20314",
+
+  ];
+
+  let current = 0;
+  const proImage = document.getElementById("proImage");
+
+  function slideNext() {
+    current = (current + 1) % galleryImages.length;
+    proImage.src = galleryImages[current];
+  }
+
+  function slidePrev() {
+    current = (current - 1 + galleryImages.length) % galleryImages.length;
+    proImage.src = galleryImages[current];
+  }
+</script>
+
 
 </body>
 </html>
