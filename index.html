@@ -70,15 +70,22 @@
 </section>
 <section>
   <h2>Farm Gallery</h2>
-  <p>Real views from Krishi Kushi Farmland, Halaguru</p>
+  <p>Explore Krishi Kushi Farmland</p>
 
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Farm view">
-    <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314" alt="Green land">
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Nature">
-    <img src="https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce" alt="Trees">
+  <div class="slider-container">
+    <button class="nav left" onclick="slideLeft()">❮</button>
+
+    <div class="slider" id="slider">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+      <img src="https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce">
+    </div>
+
+    <button class="nav right" onclick="slideRight()">❯</button>
   </div>
 </section>
+
 
 <section id="contact">
   <h2>Contact Us</h2>
